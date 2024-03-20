@@ -24,10 +24,26 @@ for column in no_numeric_columns:
         df[column] = df[column].replace(mapping_column )
         print("La colonne", column, "a été transformer avec les valeurs :", mapping_column)
 print(df)
+#Vérifier si la base est normalisée ou non (centrée-réduite), effectuer les transformations nécessaires.
 means = df.mean()
 stds = df.std()
 print("Moyennes des colonnes :\n", means)
 print("Écarts-types des colonnes :\n", stds)
-
-
-
+for col in df.columns:  
+  df[col] = (df[col] - means[col]) / stds[col]
+means = round(df.mean())
+stds = df.std()
+print("Moyennes des colonnes :\n", means)
+print("Écarts-types des colonnes :\n", stds)
+#Afficher la matrice de corrélation puis analyser les dépendances des variables. Quels sont les couples de variables les plus corrélées.
+matrice_corre = df.corr()
+print(matrice_corre)
+print(matrice_corre["GENDER"]["GENDER"])
+plus_correles = []
+for i in matrice_corre.columns:
+     for j in matrice_corre[i].index:
+         if i!=j and  abs(matrice_corre[i][j]) > 0.4:
+             if (j,i,matrice_corre[i][j]) not in  plus_correles:
+                plus_correles.append((i,j,matrice_corre[i][j]))
+print(plus_correles)
+"""La phase d’extraction des caractéristiques"""
