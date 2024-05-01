@@ -1,0 +1,1716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>905</width>
+    <height>626</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(24, 24, 24);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="selct_widg" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>515</width>
+      <height>309</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="ok_button">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>240</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Terminer</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="select_button">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>130</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Select file</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="file_path_txt">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>130</y>
+       <width>281</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>110</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+     </property>
+     <property name="text">
+      <string>Select a CSV file</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+     </property>
+     <property name="text">
+      <string>Dataset Importer</string>
+     </property>
+    </widget>
+    <zorder>label</zorder>
+    <zorder>ok_button</zorder>
+    <zorder>select_button</zorder>
+    <zorder>file_path_txt</zorder>
+    <zorder>label_2</zorder>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>911</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <widget class="QTableView" name="tableView">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>50</y>
+       <width>651</width>
+       <height>481</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(40, 40, 40);
+background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="shape_txt_3">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>0</y>
+       <width>391</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+     </property>
+     <property name="text">
+      <string>base de donner :</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="notification">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>540</y>
+       <width>641</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(212, 0, 0);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+     </property>
+     <property name="text">
+      <string>a</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="return1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+  padding: 3px;
+  font-size: 12px;
+ 
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+ 
+	background-color: rgb(33, 33, 33);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+                                        }
+ QPushButton:hover
+                                        {
+background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+                                        QPushButton:pressed
+                                        {
+ transform: translateY(-1px);
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>&lt; Retourner</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>170</y>
+       <width>211</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <widget class="QPushButton" name="normalize_but">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>181</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+      </property>
+      <property name="text">
+       <string>Normaliser la base</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="vleur_manq_but">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>181</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+      </property>
+      <property name="text">
+       <string>Remplacer les valeurs 
+manquantes</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="codage_but">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>181</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+      </property>
+      <property name="text">
+       <string>coder les valuers</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>211</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+      </property>
+      <property name="text">
+       <string>Préparation de Données</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="widget_3" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>211</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <widget class="QPushButton" name="mat_corr">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>181</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+       </property>
+       <property name="text">
+        <string>Matrice de corrélation</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="acp_interface_but">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>181</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+       </property>
+       <property name="text">
+        <string>Extraction 
+des caractéristiques</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="data_but">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>181</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+       </property>
+       <property name="text">
+        <string> Data Mining</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="shape_txt">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>221</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+     </property>
+     <property name="text">
+      <string>a</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_4" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-1</y>
+      <width>901</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <widget class="QTableView" name="tableView_acp">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>50</y>
+       <width>681</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tableView_3">
+     <property name="geometry">
+      <rect>
+       <x>205</x>
+       <y>430</y>
+       <width>681</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="return2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+  padding: 3px;
+  font-size: 12px;
+ 
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+ 
+	background-color: rgb(33, 33, 33);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+                                        }
+ QPushButton:hover
+                                        {
+background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+                                        QPushButton:pressed
+                                        {
+ transform: translateY(-1px);
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>&lt; Retourner</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>380</y>
+       <width>561</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>les composantes principales avec méthode :</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="valeur_propre_but">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>161</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Les valeurs propres</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="histograme_vp_but">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>230</y>
+       <width>161</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 9px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Histogramme des VP</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="combo_box_acp_cp">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>380</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+ border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>kaizer</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Critère du pourcentage ( 70%)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Critère du pourcentage ( 80%)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Critère du pourcentage ( 90%)</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="cp1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>470</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+ border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cp2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>530</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+ border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cercledecorr_but">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>570</y>
+       <width>161</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Cercle de corrélation</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="titre_acp">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>10</y>
+       <width>681</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>txt</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pourcentage_but">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>300</y>
+       <width>161</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Pourcentage
+ d'inertie cumulé</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="acp_but">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>161</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Appliquer l'ACP </string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="saturation_but">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>380</y>
+       <width>161</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Saturation 
+des variables</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>450</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Select x-axis: CP</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>510</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Select y-axis: CP</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_5" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-1</y>
+      <width>911</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+</string>
+    </property>
+    <widget class="QPushButton" name="k_means_but">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>210</y>
+       <width>181</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Calculer K-means</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QTableView" name="cluster_results_table">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>20</y>
+       <width>621</width>
+       <height>451</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(40, 40, 40);
+background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cah_but">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>330</y>
+       <width>181</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+                                       appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 5px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+                                        }
+ QPushButton:hover
+                                        {
+                                       background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;}
+
+                                        QPushButton:pressed
+                                        {
+                                       transform: translateY(2px);
+  transition-duration: .35s;
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>Classification Ascendante
+ Hiérarchique (CAH)</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="return3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+                                        {
+  padding: 3px;
+  font-size: 12px;
+ 
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+ 
+	background-color: rgb(33, 33, 33);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+                                        }
+ QPushButton:hover
+                                        {
+background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+                                        QPushButton:pressed
+                                        {
+ transform: translateY(-1px);
+                                        }
+</string>
+     </property>
+     <property name="text">
+      <string>&lt; Retourner</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="k_means_txt">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>490</y>
+       <width>251</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="cah_txt">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>490</y>
+       <width>271</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <zorder>selct_widg</zorder>
+   <zorder>widget_4</zorder>
+   <zorder>widget_2</zorder>
+   <zorder>widget_5</zorder>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>file_path_txt</tabstop>
+  <tabstop>ok_button</tabstop>
+  <tabstop>tableView</tabstop>
+  <tabstop>vleur_manq_but</tabstop>
+  <tabstop>codage_but</tabstop>
+  <tabstop>select_button</tabstop>
+  <tabstop>normalize_but</tabstop>
+  <tabstop>return1</tabstop>
+ </tabstops>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
+</ui>
