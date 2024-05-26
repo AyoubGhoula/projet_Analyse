@@ -1,3 +1,14 @@
+#### !!!! Télécharger des bibliothèques >> using pip install ...
+# sys
+# PyQt5
+# pandas
+# seaborn
+# matplotlib
+# scikit-learn
+# numpy
+# scipy
+
+"""________________________________________________________________________________________"""
 import sys
 from PyQt5.QtWidgets import QApplication, QFileDialog , QMainWindow,QHeaderView
 from PyQt5.uic import loadUi
@@ -10,8 +21,8 @@ import seaborn as sns
 import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
-from scipy.cluster.hierarchy import dendrogram, linkage, cophenet
-from scipy.spatial.distance import pdist
+from scipy.cluster.hierarchy import dendrogram, linkage
+from sklearn.cluster import AgglomerativeClustering
 """_______________________________________________________________________________________"""
 
 
@@ -56,6 +67,8 @@ class select_file(QMainWindow):
         self.data_but.clicked.connect(self.data_Mining_interface)
         self.k_means_but.clicked.connect(self.k_means)
         self.cah_but.clicked.connect(self.cah)
+    
+    
     def data_Mining_interface(self):
         self.selct_widg.hide()
         self.widget_2.hide()
@@ -78,6 +91,7 @@ class select_file(QMainWindow):
         self.widget_4.hide()
         self.widget_5.hide()
     def retour1(self):
+        self.setGeometry(200,50, 515, 309)
         self.setMaximumSize(515, 309)
         self.setMinimumSize(515, 309)
         self.widget_2.hide()
@@ -92,6 +106,7 @@ class select_file(QMainWindow):
         ch=""
         self.df=self.file_path_txt.text()
         if self.df :
+            self.setGeometry(150, 100, 800, 600) 
             self.setMaximumSize(911, 621)
             self.setMinimumSize(911, 621)
             self.selct_widg.hide()
@@ -123,15 +138,22 @@ class select_file(QMainWindow):
             for j in range(df.shape[1]):
                 item = QStandardItem(str(df.iloc[i, j]))
                 self.table.setItem(i, j, item)
-    def populate_table_acp(self,df):
-        self.table.setHorizontalHeaderLabels(self.columns)
+    def populate_table_acp(self,df,columns):
+        self.table.setHorizontalHeaderLabels(columns)
         for i in range(df.shape[0]):
             for j in range(df.shape[1]):
                 value = df.iloc[i, j]
                 formatted_value = "{:.4f}".format(value)
                 item = QStandardItem(formatted_value)
                 self.table.setItem(i, j, item)
-    
+    def populate_table_acp2(self,df,columns):
+        self.table.setHorizontalHeaderLabels(columns)
+        for i in range(df.shape[0]):
+            for j in range(df.shape[1]):
+                value = df.iloc[i, j]
+                formatted_value = "{:.4f}".format(int(value))
+                item = QStandardItem(formatted_value)
+                self.table.setItem(i, j, item)
     def handle_missing_values(self):
         if self.dic["valeur_manquante"]==False:
             df=self.df
@@ -194,7 +216,7 @@ class select_file(QMainWindow):
         acp = self.acp
         self.df_acp=acp.fit_transform(self.df)
         self.df_acp = pn.DataFrame(data=self.df_acp )
-        self.populate_table_acp(self.df_acp)
+        self.populate_table_acp(self.df_acp,self.columns)
         self.model=self.table
         self.tableView.setModel(self.table)
         self.tableView_acp.setModel(self.table)
@@ -347,16 +369,26 @@ class select_file(QMainWindow):
         selected_pc2=int(self.cp2.currentText())
         self.update_plot(selected_pc1, selected_pc2)
     def k_means(self):
-        acp = PCA()
-        df_acp=acp.fit_transform(self.df)
+        df=self.df.copy()
+        acp = self.acp
+        df_acp=acp.fit_transform(df)
+        df_acp_data = pn.DataFrame(data=df_acp )
         kmeans = KMeans(n_clusters=2)
         kmeans.fit(df_acp)
         labels = kmeans.labels_
         centroids = kmeans.cluster_centers_
+        clusters = kmeans.fit_predict(self.df)
+        df['Cluster'] = clusters
+        df_acp_data['Cluster'] = clusters
+        # self.columns=df.columns
+        self.populate_table_acp2(df_acp_data,df.columns)
+        self.cluster_results_table.setModel(self.table)
 
         plt.figure(figsize=(8, 6))
         plt.scatter(df_acp[:, 0], df_acp[:, 1], c=labels, cmap='viridis', edgecolor='k', s=50)
         plt.scatter(centroids[:, 0], centroids[:, 1], c='red', marker='X', s=200, label='Centroids')
+        # plt.scatter(df_acp[:, 0], s=50, c='lightblue', label='Cluster 0', edgecolors='black')
+        # plt.scatter( df_acp[:, 1], s=50, c='orange', label='Cluster 1', edgecolors='black')
         plt.xlabel('Première composante principale')
         plt.ylabel('Deuxième composante principale')
         plt.title('ACP avec KMeans Clustering 2 classes')
@@ -366,7 +398,9 @@ class select_file(QMainWindow):
         self.k_means_txt.setText(f"K-means Inertie totale:\n{kmeans.inertia_}")
     def cah(self):
         acp = PCA()
-        df_acp=acp.fit_transform(self.df)
+        df_acp = acp.fit_transform(self.df)
+        df_acp=pn.DataFrame(data=df_acp,columns=self.df.columns)
+        # df_acp=acp.fit_transform(self.df)
         Z = linkage(df_acp, method='ward')
         # Afficher le dendrogramme pour CAH
         plt.figure(figsize=(10, 6))
@@ -375,10 +409,23 @@ class select_file(QMainWindow):
         plt.xlabel('Indice de l\'échantillon')
         plt.ylabel('Distance euclidienne')
         plt.show()
-        c, coph_dists = cophenet(Z, pdist(self.df))
-        # Calculate the total inertia
-        total_inertia = np.sum(coph_dists)
-        self.cah_txt.setText(f"CAH Inertie totale:\n{total_inertia}")
+        # Calculer l'inertie totale de la CAH
+        # total_inertia = Z[-1, 2]
+        # c, coph_dists = cophenet(Z, pdist(self.df))
+        # # Calculate the total inertia
+        # total_inertia = np.sum(coph_dists)
+        ac = AgglomerativeClustering(n_clusters=2, linkage='ward')  # Adjust linkage method as needed
+        labels = ac.fit_predict(df_acp)
+        # Calculate cluster centroids
+        cluster_centers = np.array([df_acp[labels == i].mean(axis=0) for i in np.unique(labels)])
+        # Calculate total inertia
+        inertia = 0
+        for i in np.unique(labels):
+            cluster_points = df_acp[labels == i]
+            cluster_centroid = cluster_centers[i]  # Centroid for label i
+            squared_distances = np.sum((cluster_points - cluster_centroid) ** 2, axis=1)
+            inertia += np.sum(squared_distances)
+        self.cah_txt.setText(f"CAH Inertie totale:\n{inertia}")
             
         
         

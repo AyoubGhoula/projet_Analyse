@@ -265,7 +265,7 @@ background-color: rgb(255, 255, 255);
   line-height: 1.5;</string>
      </property>
      <property name="text">
-      <string>base de donner :</string>
+      <string>Base de Donner :</string>
      </property>
     </widget>
     <widget class="QLabel" name="notification">
